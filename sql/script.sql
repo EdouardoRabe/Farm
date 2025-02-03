@@ -1,4 +1,7 @@
--- Active: 1732406298309@@127.0.0.1@3306@noel
+
+
+DROP DATABASE IF EXISTS Ferme;
+
 CREATE DATABASE Ferme;
 
 use Ferme;
@@ -27,6 +30,7 @@ CREATE TABLE ferme_type_animal (
     poids_minimal_vente DECIMAL(10, 2) NOT NULL,
     poids_maximal DECIMAL(10, 2) NOT NULL,
     prix_vente_kg DECIMAL(10, 2) NOT NULL,
+    poids_initial DECIMAL(10,2) NOT NULL,
     jours_sans_manger INT NOT NULL,
     perte_poids_jour DECIMAL(5, 2) NOT NULL,
     consommation_jour DECIMAL(5, 2) NOT NULL

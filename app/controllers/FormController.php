@@ -11,7 +11,7 @@ class FormController {
 
     public function showForm() {
         $generelaiserModel=Flight:: generaliserModel();
-        $columns = $generelaiserModel->getTableHeaders("tea_user");
+        $columns = $generelaiserModel->getTableHeaders("ferme_user");
         
         $columnTypes = [
             'int' => 'number',
@@ -28,7 +28,7 @@ class FormController {
         Flight::render('form', [
             'columns' => $columns,
             'columnTypes' => $columnTypes,
-            'omitColumns' => ['id_user','role'],
+            'omitColumns' => ['ferme_user','role'],
             'hidden' => [],
             'canNull' => false,
             'numericDouble' => []
