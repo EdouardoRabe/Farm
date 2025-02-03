@@ -3,11 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <title>Formulaire</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="assets/css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body>
     <div class="container mt-5">
-        <form method="post">
+        <h1><?= $title ?></h1>
+        <form method="post" action="<?= $redirect ?>">
             <?php foreach ($hidden as $hiddenName => $hiddenValue): ?>
                 <input type="hidden" name="<?= $hiddenName ?>" value="<?= $hiddenValue ?>">
             <?php endforeach; ?>

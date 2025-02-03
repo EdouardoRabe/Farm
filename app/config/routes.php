@@ -1,6 +1,7 @@
 <?php
 
 use app\controllers\FormController;
+use app\controllers\AnimalController;
 use flight\Engine;
 use flight\net\Router;
 
@@ -10,4 +11,6 @@ use flight\net\Router;
  */
 
 $formController=new FormController();
+$animalController= new AnimalController();
 $router-> get('/',[$formController,'showForm']); 
+$router-> get('/formAnimal',[$animalController,'showForm']); 
