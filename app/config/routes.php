@@ -14,3 +14,6 @@ $formController=new FormController();
 $animalController= new AnimalController();
 $router-> get('/',[$formController,'showForm']); 
 $router-> get('/formAnimal',[$animalController,'showForm']); 
+$router-> post('/createAnimal',[$animalController,'createAnimal']); 
+$router-> post('/updateAnimal',[$animalController,'updateAnimal']); 
+$router-> get('/tableAnimal',[$animalController,'showEditableList']); 

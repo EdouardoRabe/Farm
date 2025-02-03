@@ -1,6 +1,7 @@
 <?php
 
 use app\models\GeneraliserModel;
+use app\models\UploadModel;
 use flight\Engine;
 use flight\database\PdoWrapper;
 use flight\debug\database\PdoQueryCapture;
@@ -33,4 +34,10 @@ use Tracy\Debugger;
 Flight::map('generaliserModel', function () {
     return new GeneraliserModel(Flight::bdd());
 });
+
+Flight::map('uploadModel', function () {
+    return new UploadModel(Flight::bdd());
+});
+
+
 
