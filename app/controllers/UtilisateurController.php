@@ -52,5 +52,11 @@ class UtilisateurController {
     {
         Flight::render('admin');
     }
+
+    function acceuilpage()
+    {
+        Flight::render('acceuil');
+    }
+    
     
 }

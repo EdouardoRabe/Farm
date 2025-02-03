@@ -9,7 +9,8 @@
 <body>
     
 <h1>tysd</h1>
-<?php include ('table.php') ?>
+
+<?php include('table.php') ?> 
 
 </body>
 </html>

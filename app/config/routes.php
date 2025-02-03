@@ -29,4 +29,6 @@ $router->get('/formCapitaux',[$utilisateurController,'showForm']);
 $router->post('/ajoutCapitaux',[$utilisateurController,'ajoutCapitaux']);
 $router-> get('/tableAlimentation',[$alimentationController,'showEditableList']); 
 $router-> get('/admin',[$utilisateurController,'adminpage']);
+$router-> get('/acceuil',[$utilisateurController,'acceuilpage']);
+
 
