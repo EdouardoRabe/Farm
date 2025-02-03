@@ -1,3 +1,4 @@
+
 <h1 class="login__title"><?= $title ?></h1>
 <form method="post" action="<?= $redirect ?>" enctype="multipart/form-data">
     <div class="login__content grid">
@@ -56,6 +57,7 @@
 
             <?php endif;
         endforeach; ?>
+
 
     </div>
 

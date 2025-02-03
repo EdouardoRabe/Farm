@@ -31,7 +31,9 @@ class FormController {
             'omitColumns' => ['ferme_user','role','name','first_name','phone_number','id_user'],
             'hidden' => [],
             'canNull' => false,
-            'numericDouble' => []
+            'numericDouble' => [],
+            'title'=>'maquette',
+            'redirect'=>''
         ]);
     }
 
