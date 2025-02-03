@@ -31,3 +31,4 @@ $router->get('/formCapitaux',[$utilisateurController,'showForm']);
 $router->post('/ajoutCapitaux',[$utilisateurController,'ajoutCapitaux']);
 $router-> get('/tableAlimentation',[$alimentationController,'showEditableList']); 
 $router-> get('/tableAchat',[$achatController,'showEditableList']); 
+$router-> post('/achat',[$achatController,'achat']); 

@@ -60,6 +60,7 @@ CREATE TABLE ferme_achat_alimentation (
     id_achatAlimentation INT PRIMARY KEY AUTO_INCREMENT,
     id_alimentation INT NOT NULL,
     quantiteKg DECIMAL(5, 2) NOT NULL,
+    date_achat DATE NOT NULL,
     id_user INT,
     FOREIGN KEY (id_user) REFERENCES ferme_user (id_user),
     FOREIGN KEY (id_alimentation) REFERENCES ferme_alimentation (id_alimentation)
@@ -70,6 +71,7 @@ CREATE TABLE ferme_achat_animal (
     id_animal INT NOT NULL,
     date_achat DATE NOT NULL,
     id_user INT,
+    montant DECIMAL(10,2) NOT NULL,
     FOREIGN KEY (id_user) REFERENCES ferme_user (id_user),
     FOREIGN KEY (id_animal) REFERENCES ferme_animal (id_animal)
 );
