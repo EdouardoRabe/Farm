@@ -1,5 +1,6 @@
 <?php
     session_start();
+    $_SESSION['id_user']=2;
     // $_SESSION["racine"]="";
 /*
  * FlightPHP Framework
