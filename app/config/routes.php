@@ -13,6 +13,7 @@ use flight\net\Router;
 
 $formController=new FormController();
 $animalController= new AnimalController();
+
 $alimentationController= new AlimentationController();
 $router-> get('/',[$formController,'showForm']); 
 $router-> get('/formAnimal',[$animalController,'showForm']); 
@@ -23,3 +24,4 @@ $router-> post('/updateAnimal',[$animalController,'updateAnimal']);
 $router-> post('/updateAlimentation',[$alimentationController,'updateAlimentation']); 
 $router-> get('/tableAnimal',[$animalController,'showEditableList']); 
 $router-> get('/tableAlimentation',[$alimentationController,'showEditableList']); 
+

@@ -25,7 +25,9 @@ class AnimalController {
             'text' => 'textarea'
         ];
 
+
         Flight::render('form', [
+
             'columns' => $columns,
             'columnTypes' => $columnTypes,
             'omitColumns' => ['id_typeAnimal'],
@@ -33,7 +35,9 @@ class AnimalController {
             'canNull' => false,
             'numericDouble' => [],
             'title'=> 'Creation de type d\'animal',
+
             'redirect'=> 'createAnimal'
+
         ]);
     }
 
@@ -49,7 +53,9 @@ class AnimalController {
             $upload_image = $uploadModel->uploadImg($file);
             $reponse['image']=$upload_image;
             $insert=$generelaiserModel->  insererDonnee('ferme_type_animal',$reponse);
+
             Flight:: redirect('tableAnimal');
+
         }
     }
 
@@ -83,6 +89,7 @@ class AnimalController {
     function updateAnimal() {
         $generelaiserModel = Flight::generaliserModel();
         $uploadModel = Flight::uploadModel();
+
     
         $id_typeAnimals = $_POST['id_typeAnimal']; 
         $images = $_FILES['image'];
@@ -114,6 +121,7 @@ class AnimalController {
     
 
     
+
   
    
 }

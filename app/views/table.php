@@ -32,6 +32,7 @@
                                         
                                         <input 
                                             type="file" 
+
                                             name="<?= $key ?>[]" 
                                             class="form-control mt-2"
                                         >
@@ -45,6 +46,7 @@
                                     <?php else: ?>
                                         <input 
                                             type="<?= $columnTypes[$key] ?? 'text' ?>" 
+
                                             name="<?= $key ?>[]" 
                                             value="<?= htmlspecialchars($value) ?>" 
                                             class="form-control"
@@ -53,6 +55,7 @@
                                 </td>
                             <?php endif; ?>
                         <?php endforeach; ?>
+
                         <input type="hidden" name="<?= $column ?>[]" value="<?= htmlspecialchars($row[$column]) ?>">
                     </tr>
                 <?php endforeach; ?>
