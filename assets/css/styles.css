@@ -166,8 +166,8 @@ img {
   width: 100%;
   display: inline-flex;
   justify-content: center;
-  /* background-color: var(--first-color); */
-  background-color: #008000;
+  background-color: var(--first-color);
+  /* background-color: #008000; */
   color: var(--white-color);
   font-weight: var(--font-semi-bold);
   padding-block: 1.5rem;
@@ -178,8 +178,8 @@ img {
 }
 
 .login__button:hover {
-  /* background-color: var(--first-color-alt); */
-  background-color: #068a06;
+  background-color: var(--first-color-alt);
+  /* background-color: #068a06; */
   box-shadow: 0 8px 24px hsla(208, 92%, 32%, .3);
 }
 
@@ -225,15 +225,15 @@ img {
   font-size: var(--small-font-size);
 }
 
-g{
+/* g{
   background-color: #0cac0c;
   color: #0cac0c;
-}
+} */
 
 .login__switch button {
   background: none;
-  /* color: var(--first-color); */
-  color: #008000;
+  color: var(--first-color);
+  /* color: #008000; */
   font-size: var(--small-font-size);
   font-weight: var(--font-semi-bold);
   cursor: pointer;
@@ -241,9 +241,9 @@ g{
 }
 
 .login__switch button:hover {
-  /* color: var(--first-color-alt); */
+  color: var(--first-color-alt);
 
-  color: #0cac0c;
+  /* color: #0cac0c; */
 
 }
 
@@ -284,15 +284,15 @@ g{
 
 /* Input focus color */
 .login__input:focus {
-  /* border-color: var(--first-color); */
-  border-color: #008000;
+  border-color: var(--first-color);
+  /* border-color: #008000; */
 }
 
 .login__input:focus ~ .login__label,
 .login__input:focus ~ .login__icon {
-  /* color: var(--first-color); */
+  color: var(--first-color);
 
-  color: #008000;
+  /* color: #008000; */
 }
 
 /* Show hide login & create account */
@@ -367,6 +367,6 @@ g{
   }
 }
 
-.toa1{
+/* .toa1{
   background-color: #008000;
-}
+} */
