@@ -26,7 +26,7 @@ class UtilisateurController {
             'text' => 'textarea'
         ];
 
-        Flight::render('form', [
+        Flight::render('template', [
             'columns' => $columns,
             'columnTypes' => $columnTypes,
             'omitColumns' => ['id_capitaux','capitaux_date','id_user'],

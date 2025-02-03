@@ -25,7 +25,7 @@ class AlimentationController {
             'text' => 'textarea'
         ];
 
-        Flight::render('type_animal', [
+        Flight::render('template', [
             'columns' => $columns,
             'columnTypes' => $columnTypes,
             'omitColumns' => ['id_alimentation'],
