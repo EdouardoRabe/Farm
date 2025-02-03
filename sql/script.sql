@@ -27,6 +27,7 @@ CREATE TABLE ferme_gestion_capitaux (
 CREATE TABLE ferme_type_animal (
     id_typeAnimal INT PRIMARY KEY AUTO_INCREMENT,
     espece VARCHAR(100) NOT NULL,
+    image VARCHAR(100) NOT NULL,
     poids_minimal_vente DECIMAL(10, 2) NOT NULL,
     poids_maximal DECIMAL(10, 2) NOT NULL,
     prix_vente_kg DECIMAL(10, 2) NOT NULL,
@@ -44,6 +45,7 @@ CREATE TABLE ferme_animal (
 
 CREATE TABLE ferme_alimentation (
     id_alimentation INT PRIMARY KEY AUTO_INCREMENT,
+    image VARCHAR(100) NOT NULL,
     nom VARCHAR(100) NOT NULL,
     pourcentage_gain DECIMAL(5, 2) NOT NULL,
     poids DECIMAL(10, 2) NOT NULL,
