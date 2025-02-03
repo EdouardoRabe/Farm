@@ -47,7 +47,6 @@ CREATE TABLE ferme_animal (
 CREATE TABLE ferme_alimentation (
     id_alimentation INT PRIMARY KEY AUTO_INCREMENT,
     image VARCHAR(100) NOT NULL,
-
     id_typeAnimal INT NOT NULL,
     prix_achat DECIMAL(10,2) NOT NULL,
     nom VARCHAR(100) NOT NULL,
@@ -69,7 +68,6 @@ CREATE TABLE ferme_achat_alimentation (
 CREATE TABLE ferme_achat_animal (
     id_achatAnimal INT PRIMARY KEY AUTO_INCREMENT,
     id_animal INT NOT NULL,
-    prix DECIMAL(10, 2) NOT NULL,
     date_achat DATE NOT NULL,
     id_user INT,
     FOREIGN KEY (id_user) REFERENCES ferme_user (id_user),
