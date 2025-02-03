@@ -1,63 +1,79 @@
+<div class="login container grid" id="loginAccessRegister">
+         <!--===== LOGIN ACCESS =====-->
+
+        
+
+         <div class="login__access">
 <h1 class="login__title"><?= $title ?></h1>
-<form method="post" action="<?= $redirect ?>" enctype="multipart/form-data">
-    <div class="login__content grid">
-        <?php foreach ($hidden as $hiddenName => $hiddenValue): ?>
-            <input type="hidden" name="<?= $hiddenName ?>" value="<?= $hiddenValue ?>">
-        <?php endforeach; ?>
+<div class="login__area">
+<form method="post" action="<?= $redirect ?>" enctype="multipart/form-data" class="login__form">
 
-        <?php foreach ($columns as $column):
-            $columnName = $column['Field'];
-            $columnType = strtolower($column['Type']);
+<div class="login__content grid">
+    <?php foreach ($hidden as $hiddenName => $hiddenValue): ?>
+        <input type="hidden" name="<?= $hiddenName ?>" value="<?= $hiddenValue ?>">
+    <?php endforeach; ?>
 
-            if (in_array($columnName, $omitColumns))
-                continue;
+    <?php foreach ($columns as $column):
+        $columnName = $column['Field'];
+        $columnType = strtolower($column['Type']);
 
-            $inputType = 'text';
-            if ($columnName === 'password') {
-                $inputType = 'password';
-            } elseif (strpos($columnName, 'image') !== false) {
-                $inputType = 'file';
-            } else {
-                foreach ($columnTypes as $dbType => $inputTypeValue) {
-                    if (strpos($columnType, $dbType) !== false) {
-                        $inputType = $inputTypeValue;
-                        break;
-                    }
+        if (in_array($columnName, $omitColumns))
+            continue;
+
+        $inputType = 'text';
+        if ($columnName === 'password') {
+            $inputType = 'password';
+        } elseif (strpos($columnName, 'image') !== false) {
+            $inputType = 'file';
+        } else {
+            foreach ($columnTypes as $dbType => $inputTypeValue) {
+                if (strpos($columnType, $dbType) !== false) {
+                    $inputType = $inputTypeValue;
+                    break;
                 }
             }
+        }
 
-            $required = $canNull ? '' : 'required';
+        $required = $canNull ? '' : 'required';
 
-            if (in_array($columnName, $numericDouble)): ?>
-                <div class="form-group">
-                    <label for="min_<?= $columnName ?>">Min <?= ucfirst(str_replace('_', ' ', $columnName)) ?></label>
-                    <input type="<?= $inputType ?>" name="min_<?= $columnName ?>" id="min_<?= $columnName ?>"
-                        class="form-control" <?= $required ?>>
-                </div>
-                <div class="form-group">
-                    <label for="max_<?= $columnName ?>">Max <?= ucfirst(str_replace('_', ' ', $columnName)) ?></label>
-                    <input type="<?= $inputType ?>" name="max_<?= $columnName ?>" id="max_<?= $columnName ?>"
-                        class="form-control" <?= $required ?>>
-                </div>
-            <?php else: ?>
+        if (in_array($columnName, $numericDouble)): ?>
+            
+                <label for="min_<?= $columnName ?>">Min <?= ucfirst(str_replace('_', ' ', $columnName)) ?></label>
+                <input type="<?= $inputType ?>" name="min_<?= $columnName ?>" id="min_<?= $columnName ?>" class="form-control"
+                    <?= $required ?>>
+            
+            
+                <label for="max_<?= $columnName ?>">Max <?= ucfirst(str_replace('_', ' ', $columnName)) ?></label>
+                <input type="<?= $inputType ?>" name="max_<?= $columnName ?>" id="max_<?= $columnName ?>" class="form-control"
+                    <?= $required ?>>
+           
+        <?php else: ?>
 
-
-                <label for="<?= $columnName ?>"><?= ucfirst(str_replace('_', ' ', $columnName)) ?></label>
+            
+            
+            <div class="login__box">
                 <?php if ($inputType === 'textarea'): ?>
-                    <textarea name="<?= $columnName ?>" id="<?= $columnName ?>" class="form-control" <?= $required ?>></textarea>
+                    <textarea name="<?= $columnName ?>" id="<?= $columnName ?>"  <?= $required ?>></textarea>
                 <?php else: ?>
 
-                    <div class="login__box">
-                        <input type="<?= $inputType ?>" name="<?= $columnName ?>" id="<?= $columnName ?>" <?= $inputType === 'file' ? 'accept="image/*"' : '' ?> <?= $required ?>class="login__input">
-                    <?php endif; ?>
-                    </div>
+                    
+                    <input type="<?= $inputType ?>" name="<?= $columnName ?>" id="<?= $columnName ?>" <?= $inputType === 'file' ? 'accept="image/*"' : '' ?>         required placeholder=" "    class="login__input">
+                    <label for="email" class="login__label"><?= $columnName ?></label>
 
-            <?php endif;
-        endforeach; ?>
+                <?php endif; ?>
+            </div>
+        <?php endif;
+    endforeach; ?>
 
 
-    </div>
+</div>
 
     <button type="submit" class="login__button">Envoyer</button>
 
 </form>
+</div>
+</div>
+</div>
+
+
+
