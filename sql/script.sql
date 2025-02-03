@@ -30,9 +30,8 @@ CREATE TABLE ferme_type_animal (
     image VARCHAR(100) NOT NULL,
     poids_minimal_vente DECIMAL(10, 2) NOT NULL,
     poids_maximal DECIMAL(10, 2) NOT NULL,
-    prix_achat DECIMAL(10,2) NOT NULL,
+    prix_achat_kg DECIMAL(10,2) NOT NULL,
     prix_vente_kg DECIMAL(10, 2) NOT NULL,
-    poids_initial DECIMAL(10,2) NOT NULL,
     jours_sans_manger INT NOT NULL,
     perte_poids_jour DECIMAL(5, 2) NOT NULL,
     consommation_jour DECIMAL(5, 2) NOT NULL
@@ -41,6 +40,7 @@ CREATE TABLE ferme_type_animal (
 CREATE TABLE ferme_animal (
     id_animal INT PRIMARY KEY AUTO_INCREMENT,
     id_typeAnimal INT NOT NULL,
+    poids_initial DECIMAL(10,2) NOT NULL,
     FOREIGN KEY (id_typeAnimal) REFERENCES ferme_type_animal (id_typeAnimal)
 );
 

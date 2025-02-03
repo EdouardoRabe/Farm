@@ -1,5 +1,6 @@
 <?php
 
+use app\controllers\AchatController;
 use app\controllers\AlimentationController;
 use app\controllers\FormController;
 use app\controllers\AnimalController;
@@ -17,6 +18,7 @@ $animalController= new AnimalController();
 
 $alimentationController= new AlimentationController();
 $utilisateurController = new UtilisateurController();
+$achatController = new AchatController();
 $router-> get('/',[$formController,'showForm']); 
 $router-> get('/formAnimal',[$animalController,'showForm']); 
 $router-> get('/formAlimentation',[$alimentationController,'showForm']); 
@@ -28,3 +30,4 @@ $router-> get('/tableAnimal',[$animalController,'showEditableList']);
 $router->get('/formCapitaux',[$utilisateurController,'showForm']);
 $router->post('/ajoutCapitaux',[$utilisateurController,'ajoutCapitaux']);
 $router-> get('/tableAlimentation',[$alimentationController,'showEditableList']); 
+$router-> get('/tableAchat',[$achatController,'showEditableList']); 
