@@ -805,6 +805,13 @@ class GeneraliserModel
         return $html;
     }
 
+    public function getTableHeaders($table) {
+        $query = "DESCRIBE $table";
+        $stmt = $this->bdd->prepare($query);
+        $stmt->execute();
+        return $stmt->fetchAll();
+    }
+
 
     public function generateInsertForm($table, $omitColumns = [], $redirectPage = '#', $method = 'POST', $hidden = [], $canNull=false, $numericDouble=[])
     {
