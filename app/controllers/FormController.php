@@ -36,8 +36,4 @@ class FormController {
     }
 
 
-    public function test() 
-    {
-        Flight::render('test',[]);
-    }
 }

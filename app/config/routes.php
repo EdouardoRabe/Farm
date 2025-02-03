@@ -1,6 +1,7 @@
 <?php
 
 use app\controllers\FormController;
+use app\controllers\AnimalController;
 use flight\Engine;
 use flight\net\Router;
 
@@ -10,6 +11,15 @@ use flight\net\Router;
  */
 
 $formController=new FormController();
+$animalController= new AnimalController();
 $router-> get('/',[$formController,'showForm']); 
-$router-> get('/t',[$formController,'test']); 
+
+// $router-> get('/t',[$formController,'test']); 
+
+
+$router-> get('/formAnimal',[$animalController,'showForm']); 
+$router-> post('/createAnimal',[$animalController,'createAnimal']); 
+$router-> post('/updateAnimal',[$animalController,'updateAnimal']); 
+$router-> get('/tableAnimal',[$animalController,'showEditableList']); 
+// $router-> get('/type_animal',[$animalController,'redirectTypeAnimal']); 
 
