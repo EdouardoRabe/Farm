@@ -25,7 +25,9 @@ class AnimalController {
             'text' => 'textarea'
         ];
 
-        Flight::render('form', [
+
+        Flight::render('type_animal', [
+
             'columns' => $columns,
             'columnTypes' => $columnTypes,
             'omitColumns' => ['id_typeAnimal'],
@@ -33,7 +35,9 @@ class AnimalController {
             'canNull' => false,
             'numericDouble' => [],
             'title'=> 'Creation de type d\'animal',
+
             'redirect'=> 'createAnimal'
+
         ]);
     }
 
@@ -49,7 +53,9 @@ class AnimalController {
             $upload_image = $uploadModel->uploadImg($file);
             $reponse['image']=$upload_image;
             $insert=$generelaiserModel->  insererDonnee('ferme_type_animal',$reponse);
-            Flight:: redirect('formAnimal?success');
+
+            Flight:: redirect('tableAnimal');
+
         }
     }
 
@@ -83,25 +89,39 @@ class AnimalController {
     function updateAnimal() {
         $generelaiserModel = Flight::generaliserModel();
         $uploadModel = Flight::uploadModel();
-        $reponse = $generelaiserModel->getFormData('ferme_type_animal', ['id_typeAnimal', 'old_image'], 'POST');
-        $file = $_FILES['image'];
-        if (!empty($file['name']) && $file['name'] !== "old_image") {
-            if ($uploadModel->checkError($file)) {
-                Flight::redirect('tableAnimal?error');
-            } else {
-                $upload_image = $uploadModel->uploadImg($file);
-                $reponse['image'] = $upload_image;
+
+    
+        $id_typeAnimals = $_POST['id_typeAnimal']; 
+        $images = $_FILES['image'];
+        foreach ($id_typeAnimals as $index => $id_typeAnimal) {
+            $data = [];
+            foreach ($_POST as $key => $values) {
+                if (is_array($values)) {
+                    $data[$key] = $values[$index];
+                } else {
+                    $data[$key] = $values;
+                }
             }
-        } else {
-            $reponse['image'] = $_POST['old_image'];
+            if (!empty($images['name'][$index]) && $images['name'][$index] !== "old_image") {
+                if ($uploadModel->checkError2($images, $index)) {
+                    Flight::redirect('tableAnimal?error');
+                } else {
+                    $upload_image = $uploadModel->uploadImg2($images, $index);
+                    $data['image'] = $upload_image;
+                }
+            } else {
+                $data['image'] = $_POST['old_image'][$index]; 
+            }
+            unset($data['old_image']);
+            $update = $generelaiserModel->updateTableData('ferme_type_animal', $data, ['id_typeAnimal' => $id_typeAnimal]);
         }
-        $reponse['id_typeAnimal']=$_POST['id_typeAnimal'];
-        $update = $generelaiserModel->updateTableData('ferme_type_animal', $reponse, ['id_typeAnimal' => $_POST['id_typeAnimal']]);
         Flight::redirect('tableAnimal?success');
     }
     
+    
 
     
+
   
    
 }
