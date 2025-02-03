@@ -49,7 +49,7 @@ class AnimalController {
             $upload_image = $uploadModel->uploadImg($file);
             $reponse['image']=$upload_image;
             $insert=$generelaiserModel->  insererDonnee('ferme_type_animal',$reponse);
-            Flight:: redirect('formAnimal?success');
+            Flight:: redirect('tableAnimal');
         }
     }
 
@@ -96,10 +96,10 @@ class AnimalController {
                 }
             }
             if (!empty($images['name'][$index]) && $images['name'][$index] !== "old_image") {
-                if ($uploadModel->checkError($images, $index)) {
+                if ($uploadModel->checkError2($images, $index)) {
                     Flight::redirect('tableAnimal?error');
                 } else {
-                    $upload_image = $uploadModel->uploadImg($images, $index);
+                    $upload_image = $uploadModel->uploadImg2($images, $index);
                     $data['image'] = $upload_image;
                 }
             } else {
