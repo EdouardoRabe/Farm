@@ -1,12 +1,6 @@
-<!DOCTYPE html>
-<html lang="fr">
-<head>
-    <meta charset="UTF-8">
-    <title>Formulaire</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
-</head>
-<body>
-    <div class="container mt-5">
+
+
+    <div class="container">
         <form method="post">
             <?php foreach ($hidden as $hiddenName => $hiddenValue): ?>
                 <input type="hidden" name="<?= $hiddenName ?>" value="<?= $hiddenValue ?>">
@@ -71,5 +65,3 @@
             <button type="submit" class="btn btn-primary mt-3">Envoyer</button>
         </form>
     </div>
-</body>
-</html>

@@ -11,3 +11,5 @@ use flight\net\Router;
 
 $formController=new FormController();
 $router-> get('/',[$formController,'showForm']); 
+$router-> get('/t',[$formController,'test']); 
+

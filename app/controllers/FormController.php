@@ -25,13 +25,19 @@ class FormController {
             'text' => 'textarea'
         ];
 
-        Flight::render('form', [
+        Flight::render('login', [
             'columns' => $columns,
             'columnTypes' => $columnTypes,
-            'omitColumns' => ['ferme_user','role'],
+            'omitColumns' => ['ferme_user','role','name','first_name','phone_number','id_user'],
             'hidden' => [],
             'canNull' => false,
             'numericDouble' => []
         ]);
+    }
+
+
+    public function test() 
+    {
+        Flight::render('test',[]);
     }
 }

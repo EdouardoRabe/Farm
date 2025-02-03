@@ -225,6 +225,11 @@ img {
   font-size: var(--small-font-size);
 }
 
+g{
+  background-color: #0cac0c;
+  color: #0cac0c;
+}
+
 .login__switch button {
   background: none;
   /* color: var(--first-color); */
@@ -355,8 +360,13 @@ img {
     position: absolute;
     top: 0;
     right: 0;
+    
   }
   .login__img {
     transform: translate(0rem, 0rem);
   }
+}
+
+.toa1{
+  background-color: #008000;
 }
