@@ -46,5 +46,11 @@ class UtilisateurController {
         $insertion = $generelaiserModel->insererDonnee('ferme_gestion_capitaux',$reponse);
         Flight:: redirect('formCapitaux?success');
     }
+
+
+    function adminpage()
+    {
+        Flight::render('admin');
+    }
     
 }

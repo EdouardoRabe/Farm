@@ -86,3 +86,11 @@ CREATE TABLE ferme_vente_animal (
     FOREIGN KEY (id_user) REFERENCES ferme_user (id_user),
     FOREIGN KEY (id_animal) REFERENCES ferme_animal (id_animal)
 );
+
+
+
+
+
+
+
+
