@@ -26,7 +26,7 @@ class AnimalController {
         ];
 
 
-        Flight::render('form', [
+        Flight::render('type_animal', [
 
             'columns' => $columns,
             'columnTypes' => $columnTypes,

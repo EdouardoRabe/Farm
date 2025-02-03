@@ -33,73 +33,7 @@
 
         <!--=============== LOGIN ===============-->
         <div class="login container grid" id="loginAccessRegister">
-         <!--===== LOGIN ACCESS =====-->
-
-
-
-         <div class="login__access">
-            <h1 class="login__title">Creation Type Animale</h1>
-            
-           
-               <form action="" class="login__form">
-                  <div class="login__content grid">
-                     <div class="login__box">
-                        <input type="number" id="email" required placeholder=" " class="login__input">
-                        <label for="email" class="login__label">Poids Minimal Vente</label>
-            
-                     </div>
-
-                     <div class="login__content grid">
-                     <div class="login__box">
-                        <input type="number" id="email" required placeholder=" " class="login__input">
-                        <label for="email" class="login__label">Poids maximal</label>
-            
-                     </div>
-
-                     <div class="login__content grid">
-                     <div class="login__box">
-                        <input type="number" id="email" required placeholder=" " class="login__input">
-                        <label for="email" class="login__label">Poids vente/kg</label>
-            
-                     </div>
-
-                     <div class="login__content grid">
-                     <div class="login__box">
-                        <input type="number" id="email" required placeholder=" " class="login__input">
-                        <label for="email" class="login__label">Poids initiale</label>
-            
-                     </div>
-
-                     <div class="login__content grid">
-                     <div class="login__box">
-                        <input type="number" id="email" required placeholder=" " class="login__input">
-                        <label for="email" class="login__label">Jour sans manger</label>
-            
-                     </div>
-
-                     <div class="login__content grid">
-                     <div class="login__box">
-                        <input type="number" id="email" required placeholder=" " class="login__input">
-                        <label for="email" class="login__label">Perte poids jour</label>
-            
-                     </div>
-
-                     <div class="login__content grid">
-                     <div class="login__box">
-                        <input type="number" id="email" required placeholder=" " class="login__input">
-                        <label for="email" class="login__label">Consomation jour</label>
-            
-                     </div>
-         
-                  
-         
-                  
-         
-                  <button type="submit" class="login__button">Envoyer</button>
-               </form>
-      
-             
-            
+            <?php include('form.php') ?> 
          </div>
 
 
@@ -108,7 +42,6 @@
 
 
 
-    <!-- <?php include('form.php') ?> -->
 
     
  <!-- Espece

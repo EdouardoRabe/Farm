@@ -25,14 +25,14 @@ class AlimentationController {
             'text' => 'textarea'
         ];
 
-        Flight::render('form', [
+        Flight::render('type_animal', [
             'columns' => $columns,
             'columnTypes' => $columnTypes,
             'omitColumns' => ['id_alimentation'],
             'hidden' => [],
             'canNull' => false,
             'numericDouble' => [],
-            'title'=> 'Creation de type d\'animal',
+            'title'=> 'Creation de type d\'alimentation',
             'redirect'=> 'createAlimentation'
         ]);
     }

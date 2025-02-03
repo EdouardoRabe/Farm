@@ -1,4 +1,3 @@
-
 <h1 class="login__title"><?= $title ?></h1>
 <form method="post" action="<?= $redirect ?>" enctype="multipart/form-data">
     <div class="login__content grid">
@@ -49,11 +48,9 @@
                 <?php else: ?>
 
                     <div class="login__box">
-                        <input type="<?= $inputType ?>" name="<?= $columnName ?>" id="<?= $columnName ?>" <?= $inputType === 'file' ? 'accept="image/*"' : '' ?>             <?= $required ?>class="login__input">
-                        <label for="names" class="login__label"><?= $columnName ?></label>
-
+                        <input type="<?= $inputType ?>" name="<?= $columnName ?>" id="<?= $columnName ?>" <?= $inputType === 'file' ? 'accept="image/*"' : '' ?> <?= $required ?>class="login__input">
                     <?php endif; ?>
-                </div>
+                    </div>
 
             <?php endif;
         endforeach; ?>
