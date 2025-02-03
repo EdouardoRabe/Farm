@@ -12,30 +12,29 @@ class AchatController {
 
    
     public function showEditableList() {
-        $columnTypes = [
-            'int' => 'number',
-            'float' => 'number',
-            'decimal' => 'number',
-            'number' => 'number',
-            'varchar' => 'text',
-            'char' => 'text',
-            'date' => 'date',
-            'datetime' => 'datetime-local',
-            'text' => 'textarea'
-        ];
         $generelaiserModel= Flight:: generaliserModel();
         $data=$generelaiserModel-> getTableData('ferme_type_animal',[],[]);
-
-        $omitColumns = ['id_typeAnimal','poids_minimal_vente','poids_maximal','prix_achat_kg','prix_vente_kg','jours_sans_manger','perte_poids_jour','consommation_jour'];  
-    
-        Flight::render('table', [
+        Flight::render('achat', [
             'data' => $data,
-            'columnTypes' => $columnTypes,
-            'omitColumns' => $omitColumns,
-            'redirectForm' => 'updateAlimentation',
-            'column'=>'id_typeAnimal',
-            'title' => 'Liste modifiable'
         ]);
+    }
+
+    public function achat(){
+        $generelaiserModel= Flight:: generaliserModel();
+        $reponse=[
+            "id_typeAnimal"=> $_POST['id_typeAnimal'],
+            'poids_initial'=> $_POST['poids_initial']
+        ];
+        $insertAnimal=$generelaiserModel-> insererDonnee('ferme_animal',$reponse,'POST');
+        $animal_id=$generelaiserModel-> getLastInsertedId('ferme_animal','id_animal');
+        $donnee=[
+            'id_animal'=>$animal_id['last_id'],
+            'date_achat'=>date("Y-m-d H:i:s"),
+            'id_user'=>$_SESSION['id_user'],
+            'montant'=>$_POST['prix_achat_kg']*$_POST['poids_initial'],
+        ];
+        $insertAchat=$generelaiserModel-> insererDonnee('ferme_achat_animal',$donnee,'POST');
+        Flight::redirect('tableAchat?success');
     }
 
     
