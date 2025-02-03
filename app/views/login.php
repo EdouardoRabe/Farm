@@ -46,7 +46,7 @@
                   <div class="login__content grid">
                      <div class="login__box">
                         <input type="email" id="email" required placeholder=" " class="login__input">
-                        <!-- <label for="email" class="login__label">Email</label> -->
+                        <label for="email" class="login__label">Email</label>
             
                         <i class="ri-mail-fill login__icon"></i>
                      </div>
@@ -147,6 +147,6 @@
          </div>
       </div>
       
-      <script src="assets/js/main.js"></script>
+      <script src="../assets/js/main2.js"></script>
    </body>
 </html>

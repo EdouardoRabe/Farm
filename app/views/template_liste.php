@@ -10,7 +10,7 @@
     
 <h1>tysd</h1>
 
-<?php include('table.php') ?> 
+<?php include('tab.php') ?> 
 
 </body>
 </html>
