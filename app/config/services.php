@@ -1,6 +1,7 @@
 <?php
 
 use app\models\GeneraliserModel;
+use app\models\GestionModel;
 use app\models\UploadModel;
 use flight\Engine;
 use flight\database\PdoWrapper;
@@ -37,6 +38,10 @@ Flight::map('generaliserModel', function () {
 
 Flight::map('uploadModel', function () {
     return new UploadModel(Flight::bdd());
+});
+
+Flight::map('gestionModel', function () {
+    return new GestionModel(Flight::bdd());
 });
 
 

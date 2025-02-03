@@ -2,6 +2,7 @@
 
 namespace app\controllers;
 
+use DateTime;
 use Flight;
 use flight\debug\tracy\FlightPanelExtension;
 
@@ -21,6 +22,11 @@ class AchatController {
 
     public function achat(){
         $generelaiserModel= Flight:: generaliserModel();
+        $gestionModel=Flight:: gestionModel();
+        $result = $gestionModel->calculerCapital(date("Y-m-d H:i:s"));
+        if($result<$_POST['prix_achat_kg']*$_POST['poids_initial']){
+            Flight::redirect('tableAchat?error');
+        }
         $reponse=[
             "id_typeAnimal"=> $_POST['id_typeAnimal'],
             'poids_initial'=> $_POST['poids_initial']
@@ -33,6 +39,7 @@ class AchatController {
             'id_user'=>$_SESSION['id_user'],
             'montant'=>$_POST['prix_achat_kg']*$_POST['poids_initial'],
         ];
+       
         $insertAchat=$generelaiserModel-> insererDonnee('ferme_achat_animal',$donnee,'POST');
         Flight::redirect('tableAchat?success');
     }
