@@ -3,6 +3,7 @@
 use app\controllers\AlimentationController;
 use app\controllers\FormController;
 use app\controllers\AnimalController;
+use app\controllers\UtilisateurController;
 use flight\Engine;
 use flight\net\Router;
 
@@ -15,6 +16,7 @@ $formController=new FormController();
 $animalController= new AnimalController();
 
 $alimentationController= new AlimentationController();
+$utilisateurController = new UtilisateurController();
 $router-> get('/',[$formController,'showForm']); 
 $router-> get('/formAnimal',[$animalController,'showForm']); 
 $router-> get('/formAlimentation',[$alimentationController,'showForm']); 
@@ -23,5 +25,6 @@ $router-> post('/createAlimentation',[$alimentationController,'createAlimentatio
 $router-> post('/updateAnimal',[$animalController,'updateAnimal']); 
 $router-> post('/updateAlimentation',[$alimentationController,'updateAlimentation']); 
 $router-> get('/tableAnimal',[$animalController,'showEditableList']); 
+$router->get('/formCapitaux',[$utilisateurController,'showForm']);
+$router->post('/ajoutCapitaux',[$utilisateurController,'ajoutCapitaux']);
 $router-> get('/tableAlimentation',[$alimentationController,'showEditableList']); 
-
