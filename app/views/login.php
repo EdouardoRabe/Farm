@@ -42,7 +42,7 @@
                <form action="checkLogin" class="login__form" method="post">
                   <div class="login__content grid">
                      <div class="login__box">
-                        <input type="email" id="email" required placeholder=" " class="login__input">
+                        <input name="email" type="email" id="email" required placeholder=" " class="login__input" value="jane.smith@ferme.com">
                         <label for="email" class="login__label">Email</label>
 
                         <i class="ri-mail-fill login__icon"></i>
