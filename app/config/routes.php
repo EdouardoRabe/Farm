@@ -44,3 +44,5 @@ $router-> get('/reinitialisation',[$resetController,'reset']);
 $router-> get('/tableAchatAlimentation',[$achatAlimentController,'showEditableList']); 
 $router-> post('/achat',[$achatController,'achat']); 
 $router-> post('/achatAlimentation',[$achatAlimentController,'achat']); 
+$router-> get('/venteAnimal',[$animalController,'VenteAnimal']); 
+$router-> post('/vente',[$animalController,'insertionVente']); 

@@ -99,11 +99,6 @@ VALUES
 
 
 
-
-
-
-
-
 INSERT INTO ferme_achat_alimentation (id_alimentation, quantiteKg, date_achat, id_user, montant)
 VALUES 
 (1, 100.00, '2025-02-01', 1, 150000.00),  -- Achat de Fourrage pour le Zébu
@@ -113,13 +108,6 @@ VALUES
 (5, 120.00, '2025-02-05', 1, 144000.00), -- Achat d'Herbe pour le Mouton
 (6, 250.00, '2025-02-06', 2, 450000.00); -- Achat d'Aliments concentrés pour la Vache
 
-
-
-
-
-
-
-
 INSERT INTO ferme_achat_animal (id_animal, date_achat, id_user, montant)
 VALUES 
 (1, '2025-02-01', 1, 200000.00),  -- Achat de Zébu (Animal avec id_animal = 1) par Rasoa Ny Aina
@@ -128,15 +116,6 @@ VALUES
 (4, '2025-02-04', 4, 500000.00),  -- Achat de Cheval (Animal avec id_animal = 4) par Andriamparany Hery
 (5, '2025-02-05', 1, 80000.00),   -- Achat de Mouton (Animal avec id_animal = 5) par Rasoa Ny Aina
 (6, '2025-02-06', 2, 250000.00);  -- Achat de Vache (Animal avec id_animal = 6) par Rakoto Andrianina
-
-
-
-
-
-
-
-
-
 
 
 INSERT INTO ferme_vente_animal (id_animal, poids_vente, prix_vente, date_vente, id_user)
