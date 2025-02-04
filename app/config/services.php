@@ -1,6 +1,7 @@
 <?php
 
 use app\models\AlimentationModel;
+use app\models\AnimalModel;
 use app\models\GeneraliserModel;
 use app\models\GestionModel;
 use app\models\ReinitialisationModel;
@@ -55,6 +56,12 @@ Flight::map('gestionModel', function () {
 Flight::map('resetModel', function () {
     return new ReinitialisationModel(Flight::bdd());
 });
+
+
+Flight::map('animalModel', function () {
+    return new AnimalModel(Flight::bdd());
+});
+
 
 
 
