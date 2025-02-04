@@ -1,5 +1,6 @@
 <?php
 
+use app\models\AlimentationModel;
 use app\models\GeneraliserModel;
 use app\models\UploadModel;
 use flight\Engine;
@@ -37,6 +38,10 @@ Flight::map('generaliserModel', function () {
 
 Flight::map('uploadModel', function () {
     return new UploadModel(Flight::bdd());
+});
+
+Flight::map('alimentationModel', function () {
+    return new AlimentationModel(Flight::bdd());
 });
 
 

@@ -28,3 +28,5 @@ $router-> get('/tableAnimal',[$animalController,'showEditableList']);
 $router->get('/formCapitaux',[$utilisateurController,'showForm']);
 $router->post('/ajoutCapitaux',[$utilisateurController,'ajoutCapitaux']);
 $router-> get('/tableAlimentation',[$alimentationController,'showEditableList']); 
+$router-> get('/tableauBord',[$alimentationController,'redirectTableBord']); 
+$router-> post('/CalcultableauBord',[$alimentationController,'getGlobalResult']); 
