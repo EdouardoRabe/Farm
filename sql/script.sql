@@ -76,6 +76,10 @@ CREATE TABLE ferme_achat_animal (
     FOREIGN KEY (id_animal) REFERENCES ferme_animal (id_animal)
 );
 
+ALTER TABLE ferme_achat_animal 
+ADD COLUMN auto_vente BOOLEAN NOT NULL DEFAULT FALSE;
+
+
 CREATE TABLE ferme_vente_animal (
     id_venteAnimal INT PRIMARY KEY AUTO_INCREMENT,
     id_animal INT NOT NULL,

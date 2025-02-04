@@ -46,7 +46,7 @@
                 <a href="tableAnimal" class="nav-item nav-link">Animal Update</a>
                 <a href="formAlimentation" class="nav-item nav-link">Create Alimentation</a>
                 <a href="tableAlimentation" class="nav-item nav-link">Alimentation Update</a>
-                <a href="/ETU003285/20250224" class="nav-item nav-link nav-contact bg-primary text-white px-5 ms-lg-5">Log out <i class="bi bi-arrow-right"></i></a>
+                <a href="/ETU003285/20250204" class="nav-item nav-link nav-contact bg-primary text-white px-5 ms-lg-5">Log out <i class="bi bi-arrow-right"></i></a>
             </div>
         </div>
     </nav>

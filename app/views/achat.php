@@ -72,24 +72,35 @@ if (isset($_GET['error'])) {
             </div>
 
     <div class="container">
-        <div class="grid-container">
-            <?php foreach ($data as $animal) : ?>
-                <div class="card">
-                    <img src="assets/img/<?= htmlspecialchars($animal['image']) ?>" alt="Image de <?= htmlspecialchars($animal['espece']) ?>">
-                    <div class="card-body">
-                        <h5 class="card-title"><?= htmlspecialchars($animal['espece']) ?></h5>
-                        <h5 class="card-title"><?= htmlspecialchars($animal['prix_achat_kg']) ?>Ar le kilo</h5>
-                        <form method="POST" action="achat">
-                            <input type="hidden" name="id_typeAnimal" value="<?= htmlspecialchars($animal['id_typeAnimal']) ?>">
-                            <input type="hidden" name="prix_achat_kg" value="<?= htmlspecialchars($animal['prix_achat_kg']) ?>">
-                            <input type="date" name="date_achat" class="form-control mb-2" required>
-                            <input type="number" name="poids_initial" class="form-control mb-2" placeholder="Entrez le poids" required>
-                            <button type="submit">Valider</button>
-                        </form>
+    <div class="grid-container">
+    <?php foreach ($data as $animal) : ?>
+        <div class="card">
+            <img src="assets/img/<?= htmlspecialchars($animal['image']) ?>" alt="Image de <?= htmlspecialchars($animal['espece']) ?>">
+            <div class="card-body">
+                <h5 class="card-title"><?= htmlspecialchars($animal['espece']) ?></h5>
+                <h5 class="card-title"><?= htmlspecialchars($animal['prix_achat_kg']) ?>Ar le kilo</h5>
+                <form method="POST" action="achat">
+                    <input type="hidden" name="id_typeAnimal" value="<?= htmlspecialchars($animal['id_typeAnimal']) ?>">
+                    <input type="hidden" name="prix_achat_kg" value="<?= htmlspecialchars($animal['prix_achat_kg']) ?>">
+                    <input type="date" name="date_achat" class="form-control mb-2" required>
+                    <input type="number" name="poids_initial" class="form-control mb-2" placeholder="Entrez le poids" required>
+
+                    <label class="d-block mb-2">Auto-Vente :</label>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="auto_vente" value="true" required>
+                        <label class="form-check-label">Oui</label>
                     </div>
-                </div>
-            <?php endforeach; ?>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="auto_vente" value="false" required>
+                        <label class="form-check-label">Non</label>
+                    </div>
+                    <button type="submit" class="btn btn-primary mt-2">Valider</button>
+                </form>
+            </div>
         </div>
+    <?php endforeach; ?>
+</div>
+
     </div>
 </body>
 </html>
