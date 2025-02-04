@@ -45,7 +45,7 @@
             <div class="navbar-nav ms-auto py-0">
                 <a href="accueil" class="nav-item nav-link">Home</a>
                 <a href="tableAchat" class="nav-item nav-link ">Achat</a>
-                <a href="service.html" class="nav-item nav-link ">Vente</a>
+                <a href="venteAnimal" class="nav-item nav-link ">Vente</a>
                 <a href="tableAchatAlimentation" class="nav-item nav-link active">Alimentation</a>
                
                 <a href="/ETU003285/20250204" class="nav-item nav-link nav-contact bg-primary text-white px-5 ms-lg-5">Log out <i class="bi bi-arrow-right"></i></a>
@@ -65,6 +65,11 @@
 
 
     <div class="container">
+         <?php if (isset($_GET['error'])) : ?>
+                <div class="error-message">
+                    ❌ Une erreur s'est produite lors de l'ajout de l'achat. Veuillez réessayer !
+                </div>
+            <?php endif; ?>
         <div class="grid-container">
             <?php foreach ($data as $alimentation) : ?>
                 <div class="card">
@@ -84,5 +89,16 @@
             <?php endforeach; ?>
         </div>
     </div>
+
+    <footer>
+    <div class="footer-content">
+      <p>&copy; 2025 MonSiteWeb. Tous droits réservés.</p>
+      <ul class="social-links">
+        <li><h1><a href="#" class="social-link">ETU003169 - TOAVINA</a></h1></li>
+        <li><h1><a href="#" class="social-link">ETU003285 - EDOUARDO</a></h1></li>
+        <li><h1><a href="#" class="social-link">ETU003263 - MITIA</a></h1></li>
+      </ul>
+    </div>
+  </footer>
 </body>
 </html>

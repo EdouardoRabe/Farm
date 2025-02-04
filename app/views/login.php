@@ -9,7 +9,7 @@
       <!--=============== CSS ===============-->
       <link rel="stylesheet" href="assets/css/styles.css">
       
-      <title>Responsive login and registration form - Bedimcode</title>
+      <title>LOGIN</title>
    </head>
    <body>
       <!--=============== LOGIN IMAGE ===============-->

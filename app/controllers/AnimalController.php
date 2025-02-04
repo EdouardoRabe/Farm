@@ -146,7 +146,7 @@ class AnimalController
                         'id_animal' => $animal['id_animal'],
                         'poids_vente' => $animal['poids'],
                         'id_user' => $_SESSION['id_user'],
-                        'prix_vente' => $animal['prix_vente'] * $_POST['poids'],
+                        'prix_vente' => $animal['prix_vente'] * $animal['poids'],
                         'date_vente' => date('Y-m-d')
                     ];
                     $insertAchat = $generelaiserModel->insererDonnee('ferme_vente_animal', $donnee, 'POST');
@@ -176,6 +176,9 @@ class AnimalController
         ];
 
         $insertAchat = $generelaiserModel->insererDonnee('ferme_vente_animal', $donnee, 'POST');
+        $gestionModel=Flight:: gestionModel();
+        $result = $gestionModel->calculerCapital(date("Y-m-d H:i:s"), $_SESSION['id_user']);
+        $_SESSION['result'] = $result;
         Flight::redirect('venteAnimal');
     }
 }

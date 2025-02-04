@@ -44,7 +44,7 @@
             <div class="navbar-nav ms-auto py-0">
                 <a href="accueil" class="nav-item nav-link active">Home</a>
                 <a href="tableAchat" class="nav-item nav-link">Achat</a>
-                <a href="service.html" class="nav-item nav-link">Vente</a>
+                <a href="venteAnimal" class="nav-item nav-link">Vente</a>
                 <a href="tableAchatAlimentation" class="nav-item nav-link">Alimentation</a>
                
                 <a href="/ETU003285/20250204" class="nav-item nav-link nav-contact bg-primary text-white px-5 ms-lg-5">Log out <i class="bi bi-arrow-right"></i></a>
@@ -298,7 +298,6 @@
                     <p class="mb-md-0">&copy; <a class="text-white" href="#">Your Site Name</a>. All Rights Reserved.</p>
                 </div>
                 <div class="col-md-6 text-center text-md-end">
-                    <p class="mb-0">Designed by Toavina</p>
                 </div>
             </div>
         </div>
@@ -310,9 +309,9 @@
     <div class="footer-content">
       <p>&copy; 2025 MonSiteWeb. Tous droits réservés.</p>
       <ul class="social-links">
-        <li><a href="#" class="social-link">ETU003169</a></li>
-        <li><a href="#" class="social-link">ETU003285</a></li>
-        <li><a href="#" class="social-link">ETU003263</a></li>
+        <li><h1><a href="#" class="social-link">ETU003169 - TOAVINA</a></h1></li>
+        <li><h1><a href="#" class="social-link">ETU003285 - EDOUARDO</a></h1></li>
+        <li><h1><a href="#" class="social-link">ETU003263 - MITIA</a></h1></li>
       </ul>
     </div>
   </footer>

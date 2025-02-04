@@ -64,6 +64,15 @@
 
 
 <?php include('tab.php') ?> 
-
+<footer>
+    <div class="footer-content">
+      <p>&copy; 2025 MonSiteWeb. Tous droits réservés.</p>
+      <ul class="social-links">
+        <li><h1><a href="#" class="social-link">ETU003169 - TOAVINA</a></h1></li>
+        <li><h1><a href="#" class="social-link">ETU003285 - EDOUARDO</a></h1></li>
+        <li><h1><a href="#" class="social-link">ETU003263 - MITIA</a></h1></li>
+      </ul>
+    </div>
+  </footer>
 </body>
 </html>

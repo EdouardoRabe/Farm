@@ -65,6 +65,20 @@
     background-color: #0056b3;
 }
 
+.error-message {
+    background-color: #ffdddd;
+    color: #d8000c;
+    text-align: center;
+    padding: 15px;
+    margin: 20px auto;
+    border: 1px solid #d8000c;
+    border-radius: 5px;
+    width: 50%;
+    font-weight: bold;
+    font-size: 16px;
+}
+
+
 /* Responsive */
 @media (max-width: 992px) {
     .grid-container {

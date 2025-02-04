@@ -45,8 +45,8 @@
         <div class="collapse navbar-collapse" id="navbarCollapse">
             <div class="navbar-nav ms-auto py-0">
                 <a href="accueil" class="nav-item nav-link">Home</a>
-                <a href="tableAchat" class="nav-item nav-link active">Achat</a>
-                <a href="service.html" class="nav-item nav-link">Vente</a>
+                <a href="tableAchat" class="nav-item nav-link">Achat</a>
+                <a href="venteAnimal" class="nav-item nav-link active">Vente</a>
                 <a href="tableAchatAlimentation" class="nav-item nav-link">Alimentation</a>
 
                 <a href="/ETU003285/Farm/" class="nav-item nav-link nav-contact bg-primary text-white px-5 ms-lg-5">Log out <i class="bi bi-arrow-right"></i></a>
@@ -65,6 +65,11 @@
     </div>
 
     <div class="container">
+            <?php if (count($data)==0) : ?>
+                <div class="error-message">
+                    ❌ Aucune vente disponible ou il se peut qu'il y ait des auto_ventes
+                </div>
+            <?php endif; ?>
         <div class="grid-container">
             <?php foreach ($data as $animal) : ?>
             <?php if($animal['autoVente'] == 0 ){?>
