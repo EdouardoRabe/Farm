@@ -497,6 +497,7 @@ table {
     background-color: white;
     text-align: left;
     overflow: hidden;
+    width: 100%;
     
   }
   
@@ -506,7 +507,7 @@ table {
   
   th {
     /* padding: 1rem 2rem; */
-    padding: 1.5rem 0.6rem;
+    padding: 1.3rem 0.6rem;
     text-transform: uppercase;
     letter-spacing: 0.1rem;
     font-size: 0.7rem;
@@ -514,7 +515,7 @@ table {
   }
   
   td {
-    padding: 1.5rem 0.6rem;
+    padding: 1.3rem 0.6rem;
   }
   .status {
     border-radius: var(--radius);
