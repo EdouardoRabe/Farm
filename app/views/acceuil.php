@@ -42,10 +42,10 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarCollapse">
             <div class="navbar-nav ms-auto py-0">
-                <a href="#" class="nav-item nav-link active">Home</a>
-                <a href="about.html" class="nav-item nav-link">Achat</a>
+                <a href="accueil" class="nav-item nav-link active">Home</a>
+                <a href="tableAchat" class="nav-item nav-link">Achat</a>
                 <a href="service.html" class="nav-item nav-link">Vente</a>
-                <a href="product.html" class="nav-item nav-link">Alimentation</a>
+                <a href="tableAchatAlimentation" class="nav-item nav-link">Alimentation</a>
                
                 <a href="contact.html" class="nav-item nav-link nav-contact bg-primary text-white px-5 ms-lg-5">Log out <i class="bi bi-arrow-right"></i></a>
             </div>
