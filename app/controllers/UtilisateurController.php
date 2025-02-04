@@ -44,6 +44,9 @@ class UtilisateurController {
         $reponse['capitaux_date'] = date("Y-m-d H:i:s");
         $reponse['id_user'] = $_SESSION['id_user'];
         $insertion = $generelaiserModel->insererDonnee('ferme_gestion_capitaux',$reponse);
+        $gestionModel=Flight:: gestionModel();
+        $result = $gestionModel->calculerCapital(date("Y-m-d H:i:s"),$_SESSION['id_user']);
+        $_SESSION['result']=$result;
         // Flight:: redirect('formCapitaux?success');
         if($insertion)
         {
@@ -53,6 +56,7 @@ class UtilisateurController {
         {
             Flight:: redirect('formCapitaux?error=1');
         }
+
     }
 
 
