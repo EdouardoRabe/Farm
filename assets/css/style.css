@@ -558,3 +558,81 @@ table {
   tr:nth-child(even) {
     background-color: var(--clr-gray150);
   }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Applique un style global pour la page */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  html, body {
+    height: 100%; /* Force le body à prendre toute la hauteur */
+    display: flex;
+    flex-direction: column; /* Organise le contenu et le footer dans une colonne */
+  }
+  
+  .content {
+    flex: 1; /* Cette propriété fait en sorte que la section de contenu occupe l'espace restant */
+    padding: 20px;
+    text-align: center;
+  }
+  
+  footer {
+    background-color: #333;
+    color: white;
+    padding: 20px 0;
+    text-align: center;
+    font-family: 'Arial', sans-serif;
+  }
+  
+  .footer-content {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 10px;
+  }
+  
+  footer p {
+    font-size: 14px;
+    margin-bottom: 10px;
+  }
+  
+  .social-links {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .social-links li {
+    display: inline-block;
+    margin: 0 15px;
+  }
+  
+  .social-link {
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+    transition: color 0.3s ease;
+  }
+  
+  .social-link:hover {
+    color: #ff6f61; /* Couleur hover */
+  }
+  
+  footer a {
+    text-decoration: none;
+  }
+  

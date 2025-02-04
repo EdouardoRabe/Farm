@@ -47,7 +47,16 @@ class UtilisateurController {
         $gestionModel=Flight:: gestionModel();
         $result = $gestionModel->calculerCapital(date("Y-m-d H:i:s"),$_SESSION['id_user']);
         $_SESSION['result']=$result;
-        Flight:: redirect('formCapitaux?success');
+        // Flight:: redirect('formCapitaux?success');
+        if($insertion)
+        {
+            Flight:: redirect('formCapitaux?success');
+        }
+        else
+        {
+            Flight:: redirect('formCapitaux?error=1');
+        }
+
     }
 
 

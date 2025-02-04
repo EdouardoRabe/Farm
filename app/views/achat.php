@@ -1,3 +1,11 @@
+<?php
+if (isset($_GET['error'])) {
+    echo "<div class='error'>Une erreur s'est produite lors de l'ajout de l'achat.</div>";
+}
+?>
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 
