@@ -23,7 +23,7 @@ class AchatAlimentationController {
     public function achat(){
         $generelaiserModel= Flight:: generaliserModel();
         $gestionModel=Flight:: gestionModel();
-        echo $result = $gestionModel->calculerCapital(date("Y-m-d H:i:s"));echo '</br>';
+        echo $result = $gestionModel->calculerCapital($_POST['date_achat'],$_SESSION['id_user']);echo '</br>';
         echo $_POST['prix_achat_kg']*$_POST['quantiteKg'];
         if($result<$_POST['prix_achat_kg']*$_POST['quantiteKg']){
             Flight::redirect('tableAchatAlimentation?error');
