@@ -31,27 +31,27 @@
 
 <body>
     <!-- Topbar Start -->
-    <!-- <div class="container-fluid border-bottom d-none d-lg-block">
+    <div class="container-fluid border-bottom d-none d-lg-block">
         <div class="row gx-0">
             <div class="col-lg-4 text-center py-2">
                 <div class="d-inline-flex align-items-center">
-                    <i class="bi bi-geo-alt fs-1 text-primary me-3"></i>
+                    <i class="bi bi-person-circle fs-1 text-primary me-3"></i>
                     <div class="text-start">
-                        <h6 class="text-uppercase mb-1">Our Office</h6>
-                        <span>123 Street, New York, USA</span>
+                        <h6 class="text-uppercase mb-1">Bienvenu User Nom</h6>
+                        <!-- <span>User nom</span> -->
                     </div>
                 </div>
             </div>
             <div class="col-lg-4 text-center border-start border-end py-2">
                 <div class="d-inline-flex align-items-center">
-                    <i class="bi bi-envelope-open fs-1 text-primary me-3"></i>
+                    <i class="bi bi-cash fs-1 text-primary me-3"></i>
                     <div class="text-start">
-                        <h6 class="text-uppercase mb-1">Email Us</h6>
-                        <span>info@example.com</span>
+                        <h6 class="text-uppercase mb-1"> 1000$</h6>
+                        <!-- <span>info@example.com</span> -->
                     </div>
                 </div>
             </div>
-            <div class="col-lg-4 text-center py-2">
+            <!-- <div class="col-lg-4 text-center py-2">
                 <div class="d-inline-flex align-items-center">
                     <i class="bi bi-phone-vibrate fs-1 text-primary me-3"></i>
                     <div class="text-start">
@@ -59,9 +59,9 @@
                         <span>+012 345 6789</span>
                     </div>
                 </div>
-            </div>
+            </div> -->
         </div>
-    </div> -->
+    </div>
     <!-- Topbar End -->
 
 
@@ -79,17 +79,8 @@
                 <a href="about.html" class="nav-item nav-link">Achat</a>
                 <a href="service.html" class="nav-item nav-link">Vente</a>
                 <a href="product.html" class="nav-item nav-link">Alimentation</a>
-                <div class="nav-item dropdown">
-                    <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Pages</a>
-                    <div class="dropdown-menu m-0">
-                        <a href="price.html" class="dropdown-item">Pricing Plan</a>
-                        <a href="team.html" class="dropdown-item">The Team</a>
-                        <a href="testimonial.html" class="dropdown-item">Testimonial</a>
-                        <a href="blog.html" class="dropdown-item">Blog Grid</a>
-                        <a href="detail.html" class="dropdown-item">Blog Detail</a>
-                    </div>
-                </div>
-                <a href="contact.html" class="nav-item nav-link nav-contact bg-primary text-white px-5 ms-lg-5">Contact <i class="bi bi-arrow-right"></i></a>
+               
+                <a href="contact.html" class="nav-item nav-link nav-contact bg-primary text-white px-5 ms-lg-5">Log out <i class="bi bi-arrow-right"></i></a>
             </div>
         </div>
     </nav>
@@ -102,15 +93,15 @@
             <div class="row justify-content-start">
                 <div class="col-lg-8 text-center text-lg-start">
                     <h1 class="display-1 text-uppercase text-dark mb-lg-4">Farm Shop</h1>
-                    <h1 class="text-uppercase text-white mb-lg-4">Happy Animals, Quality Products.</h1>
-                    <p class="fs-4 text-white mb-lg-4">We raise our animals with care and respect, to offer you high-quality, natural, and delicious products, from an ethical and responsible farm.</p>
+                    <h1 class="text-uppercase text-black mb-lg-4">Happy Animals, Quality Products.</h1>
+                    <p class="fs-4 text-black mb-lg-4">We raise our animals with care and respect, to offer you high-quality, natural, and delicious products, from an ethical and responsible farm.</p>
                     <div class="d-flex align-items-center justify-content-center justify-content-lg-start pt-5">
                         <a href="" class="btn btn-outline-light border-2 py-md-3 px-md-5 me-5">Read More</a>
                         <button type="button" class="btn-play" data-bs-toggle="modal"
                             data-src="https://www.youtube.com/embed/DWRcNpR6Kdc" data-bs-target="#videoModal">
                             <span></span>
                         </button>
-                        <h5 class="font-weight-normal text-white m-0 ms-4 d-none d-sm-block">Play Video</h5>
+                        <h5 class="font-weight-normal text-black m-0 ms-4 d-none d-sm-block">Play Video</h5>
                     </div>
                 </div>
             </div>
@@ -124,7 +115,7 @@
         <div class="container">
             <div class="border-start border-5 border-primary ps-5 mb-5" style="max-width: 600px;">
                 <h6 class="text-primary text-uppercase">Services</h6>
-                <h1 class="display-5 text-uppercase mb-0">Our Excellent Pet Care Services</h1>
+                <h1 class="display-5 text-uppercase mb-0">Our Excellent Care Services</h1>
             </div>
             <div class="row g-5">
                 <div class="col-md-6">
@@ -268,7 +259,7 @@
                     <p class="mb-md-0">&copy; <a class="text-white" href="#">Your Site Name</a>. All Rights Reserved.</p>
                 </div>
                 <div class="col-md-6 text-center text-md-end">
-                    <p class="mb-0">Designed by <a class="text-white" href="https://htmlcodex.com">HTML Codex</a></p>
+                    <p class="mb-0">Designed by Toavina</p>
                 </div>
             </div>
         </div>
