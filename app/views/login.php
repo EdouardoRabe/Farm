@@ -39,17 +39,17 @@
             <h1 class="login__title">Log in to your account.</h1>
             
             <div class="login__area">
-               <form action="" class="login__form">
+               <form action="checkLogin" class="login__form" method="post">
                   <div class="login__content grid">
                      <div class="login__box">
                         <input type="email" id="email" required placeholder=" " class="login__input">
                         <label for="email" class="login__label">Email</label>
-            
+
                         <i class="ri-mail-fill login__icon"></i>
                      </div>
          
                      <div class="login__box">
-                        <input type="password" id="password" required placeholder=" " class="login__input">
+                        <input name="password" type="password" id="password" required placeholder=" " class="login__input" value="password456">
                         <label for="password" class="login__label">Password</label>
             
                         <i class="ri-eye-off-fill login__icon login__password" id="loginPassword"></i>
@@ -134,6 +134,7 @@
             </div>
          </div>
       </div>
+<<<<<<< HEAD
       
    
 
@@ -144,5 +145,8 @@
 
 
       <script src="assets/js/toa.js"></script>
+=======
+      <script src="assets/js/main.js"></script>
+>>>>>>> bf574e9bc1d30aab471a50a5f1f0eb6d0b04e09b
    </body>
 </html>
