@@ -56,31 +56,64 @@
     <!-- Topbar Start -->
     <div class="container-fluid border-bottom d-none d-lg-block">
         <div class="row gx-0">
-            <div class="col-lg-4 text-center py-2">
+            <div class="col-lg-2 text-center py-2">
                 <div class="d-inline-flex align-items-center">
                     <i class="bi bi-person-circle fs-1 text-primary me-3"></i>
                     <div class="text-start">
-                        <h6 class="text-uppercase mb-1"><strong>Bienvenu <?= $_SESSION['user'][0]['name']?></strong></h6>
+                        <h6 class="text-uppercase mb-1"><strong>Bienvenu <?= $_SESSION['user'][0]['name'] ?></strong></h6>
                     </div>
                 </div>
             </div>
-            <div class="col-lg-4 text-center border-start border-end py-2">
+
+            <div class="col-lg-2 text-center border-start border-end py-2">
                 <div class="d-inline-flex align-items-center">
                     <i class="bi bi-cash fs-1 text-primary me-3"></i>
                     <div class="text-start">
-                        <h6 class="text-uppercase mb-1"> <strong><?= $_SESSION['result']?> Ar</strong></h6>
-                        <!-- <span>info@example.com</span> -->
+                        <h6 class="text-uppercase mb-1"><strong><?= $_SESSION['result'] ?> Ar</strong></h6>
                     </div>
                 </div>
             </div>
-            <div class="col-lg-4 text-center py-2">
-            <div class="d-inline-flex align-items-center">
-                    <a href="reinitialisation" class="text-danger fw-bold" onclick="return confirmReset();"><i class="bi bi-arrow-clockwise fs-1 text-primary me-3"></i></a>
+            <div class="col-lg-2 text-center border-start border-end py-2">
+                <div class="d-inline-flex align-items-center">
+                    
+                </div>
+            </div>
+
+            <div class="col-lg-2 text-center border-start border-end py-2">
+                <div class="d-inline-flex align-items-center">
+                    <a href="tableauBord" class="text-success fw-bold">
+                        <i class="bi bi-speedometer2 fs-1 text-primary me-3"></i>
+                    </a>
                     <div class="text-start">
-                        <h6 class="text-uppercase mb-1"><strong>REINITIALISER</strong></h6>
+                        <h6 class="text-uppercase mb-1"><strong>DASHBOARD</strong></h6>
                     </div>
                 </div>
             </div>
+
+            <div class="col-lg-2 text-center py-2">
+                <div class="d-inline-flex align-items-center">
+                    <a href="formCapitaux" class="text-warning fw-bold">
+                        <i class=" bi bi-cash-stack fs-1 text-primary me-3"></i>
+                    </a>
+                    <div class="text-start">
+                        <h6 class="text-uppercase mb-1"><strong>DÉPÔT</strong></h6>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="col-lg-2 text-center border-start border-end py-2">
+                <div class="d-inline-flex align-items-center">
+                    <a href="reinitialisation" class="text-danger fw-bold" onclick="return confirmReset();">
+                        <i class="bi bi-arrow-clockwise fs-1 text-primary me-3"></i>
+                    </a>
+                    <div class="text-start">
+                        <h6 class="text-uppercase mb-1"><strong>RÉINITIALISER</strong></h6>
+                    </div>
+                </div>
+            </div>
+
+        </div>
 
     <script>
         function confirmReset() {
