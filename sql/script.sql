@@ -70,6 +70,7 @@ CREATE TABLE ferme_achat_animal (
     id_achatAnimal INT PRIMARY KEY AUTO_INCREMENT,
     id_animal INT NOT NULL,
     date_achat DATE NOT NULL,
+    auto_vente BOOLEAN,
     id_user INT,
     montant DECIMAL(10,2) NOT NULL,
     FOREIGN KEY (id_user) REFERENCES ferme_user (id_user),
