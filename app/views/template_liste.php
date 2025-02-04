@@ -39,7 +39,7 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarCollapse">
             <div class="navbar-nav ms-auto py-0">
-                <a href="index.html" class="nav-item nav-link active">Home</a>
+                <a href="admin" class="nav-item nav-link active">Admin</a>
                 <a href="formAnimal" class="nav-item nav-link">Create Animal</a>
                 <a href="tableAnimal" class="nav-item nav-link">Animal Update</a>
                 <a href="formAlimentation" class="nav-item nav-link">Create Alimentation</a>
