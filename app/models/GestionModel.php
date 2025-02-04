@@ -19,9 +19,7 @@ class GestionModel{
         $stmt = $this->bdd->prepare($queryAchatAnimal);
         $stmt->execute(['date'=>$date]);
         $achatAnimal = $stmt->fetch()['total_achat_animal'] ?? 0;
-        $queryAchatAlimentation = "SELECT SUM(a.prix_achat * fa.quantiteKg) AS total_achat_aliment FROM ferme_achat_alimentation fa
-                                   JOIN ferme_alimentation a ON fa.id_alimentation = a.id_alimentation
-                                   WHERE date_achat <= :date";
+        $queryAchatAlimentation = "SELECT SUM(montant) AS total_achat_aliment FROM ferme_achat_alimentation WHERE date_achat <= :date";
         $stmt = $this->bdd->prepare($queryAchatAlimentation);
         $stmt->execute(['date'=>$date]);
         $achatAlimentation = $stmt->fetch()['total_achat_aliment'] ?? 0;

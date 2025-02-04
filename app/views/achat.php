@@ -14,10 +14,11 @@
                     <img src="assets/img/<?= htmlspecialchars($animal['image']) ?>" alt="Image de <?= htmlspecialchars($animal['espece']) ?>">
                     <div class="card-body">
                         <h5 class="card-title"><?= htmlspecialchars($animal['espece']) ?></h5>
-                        <h5 class="card-title"><?= htmlspecialchars($animal['prix_achat_kg']) ?> le kilo</h5>
+                        <h5 class="card-title"><?= htmlspecialchars($animal['prix_achat_kg']) ?>Ar le kilo</h5>
                         <form method="POST" action="achat">
                             <input type="hidden" name="id_typeAnimal" value="<?= htmlspecialchars($animal['id_typeAnimal']) ?>">
                             <input type="hidden" name="prix_achat_kg" value="<?= htmlspecialchars($animal['prix_achat_kg']) ?>">
+                            <input type="date" name="date_achat" class="form-control mb-2" required>
                             <input type="number" name="poids_initial" class="form-control mb-2" placeholder="Entrez le poids" required>
                             <button type="submit">Valider</button>
                         </form>

@@ -35,7 +35,7 @@ class AchatController {
         $animal_id=$generelaiserModel-> getLastInsertedId('ferme_animal','id_animal');
         $donnee=[
             'id_animal'=>$animal_id['last_id'],
-            'date_achat'=>date("Y-m-d H:i:s"),
+            'date_achat'=>$_POST['date_achat'],
             'id_user'=>$_SESSION['id_user'],
             'montant'=>$_POST['prix_achat_kg']*$_POST['poids_initial'],
         ];

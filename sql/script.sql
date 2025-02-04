@@ -48,11 +48,9 @@ CREATE TABLE ferme_alimentation (
     id_alimentation INT PRIMARY KEY AUTO_INCREMENT,
     image VARCHAR(100) NOT NULL,
     id_typeAnimal INT NOT NULL,
-    prix_achat DECIMAL(10,2) NOT NULL,
+    prix_achat_kg DECIMAL(10,2) NOT NULL,
     nom VARCHAR(100) NOT NULL,
     pourcentage_gain DECIMAL(5, 2) NOT NULL,
-    poids DECIMAL(10, 2) NOT NULL,
-    quantiteKg DECIMAL(5, 2) NOT NULL,
     FOREIGN KEY (id_typeAnimal) REFERENCES ferme_type_animal (id_typeAnimal)
 );
 
@@ -62,6 +60,7 @@ CREATE TABLE ferme_achat_alimentation (
     quantiteKg DECIMAL(5, 2) NOT NULL,
     date_achat DATE NOT NULL,
     id_user INT,
+    montant DECIMAL(10,2) NOT NULL,
     FOREIGN KEY (id_user) REFERENCES ferme_user (id_user),
     FOREIGN KEY (id_alimentation) REFERENCES ferme_alimentation (id_alimentation)
 );
