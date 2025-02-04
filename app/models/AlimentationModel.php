@@ -103,7 +103,7 @@ class AlimentationModel
             $dateStr = $date->format('Y-m-d');
 
             // 1. Achats d'animaux
-            $sqlAchat = "SELECT a.id_animal, animal.id_typeAnimal, a.date_achat, ta.prix_achat ,ta.image,ta.poids_initial
+            $sqlAchat = "SELECT a.id_animal, animal.id_typeAnimal, a.date_achat, ta.prix_achat_kg ,ta.image,animal.poids_initial
                         FROM ferme_achat_animal a
                         JOIN ferme_animal animal ON animal.id_animal = a.id_animal
                         JOIN ferme_type_animal ta ON animal.id_typeAnimal = ta.id_typeAnimal
@@ -117,13 +117,13 @@ class AlimentationModel
                     'id_animal' => $achat['id_animal'],
                     'id_typeAnimal' => $achat['id_typeAnimal'],
                     'date_achat' => $achat['date_achat'],
-                    'prix_achat' => $achat['prix_achat'],
+                    'prix_achat' => $achat['prix_achat_kg'],
                     'image' => $achat['image'],
                     'joursSansManger' => 0,
                     'poids' => $achat['poids_initial'],
                     'date_mort'=>null
                 ];
-                $capitaux -= $achat['prix_achat'];
+                $capitaux -= $achat['prix_achat_kg'];
             }
 
             // 2. Ventes d'animaux
@@ -147,7 +147,7 @@ class AlimentationModel
 
             // 3. Achats d'aliments
             $sqlAliment = "SELECT COALESCE(SUM(aa.quantiteKg), 0) AS totalNourriture,
-            COALESCE(SUM(a.prix_achat * aa.quantiteKg), 0) AS coutTotal
+            COALESCE(SUM(a.prix_achat_kg * aa.quantiteKg), 0) AS coutTotal
             FROM ferme_achat_alimentation aa
             JOIN ferme_alimentation a ON aa.id_alimentation = a.id_alimentation
             WHERE aa.date_achat = :date";

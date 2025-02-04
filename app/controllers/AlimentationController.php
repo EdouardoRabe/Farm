@@ -124,22 +124,17 @@ class AlimentationController
     {
         try {
             $dateFin = Flight::request()->data->dateFin;
-            $dateDebut = "2025-01-01"; 
+            $dateDebut = "2025-02-03"; 
     
             if (!$dateFin) {
                 Flight::json(['error' => 'Date requise'], 400);
                 return;
             }
-    
-            // Vérifie si le modèle est bien instancié
             $alimentModel = Flight::alimentationModel();
             if (!$alimentModel) {
                 throw new Exception("Le modèle d'alimentation est introuvable.");
             }
-    
             $result = $alimentModel->calculerStockFerme($dateDebut, $dateFin,1);
-    
-            // Simule les résultats, tu peux ajuster selon la structure de ton modèle
             if (!$result) {
                 throw new Exception("Les résultats du calcul sont vides.");
             }

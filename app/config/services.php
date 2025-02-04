@@ -43,9 +43,11 @@ Flight::map('uploadModel', function () {
 
 Flight::map('alimentationModel', function () {
     return new AlimentationModel(Flight::bdd());
+});
+
+
 Flight::map('gestionModel', function () {
     return new GestionModel(Flight::bdd());
 });
-
 
 

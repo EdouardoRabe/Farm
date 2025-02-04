@@ -101,7 +101,7 @@ error_reporting(E_ALL);
                  <td class="border border-gray-300 p-2">${animal.poids}</td>
                 <td class="border border-gray-300 p-2">${animal.date_achat || 'Non défini'}</td>
                 <td class="border border-gray-300 p-2">${animal.date_mort || 'Non defini'}</td>
-                 <td class="border border-gray-300 p-2"><img src="asset/img/${animal.image}" alt="img"></td>
+                 <td class="border border-gray-300 p-2"><img src="assets/img/${animal.image}" alt="img" style='width:100px; height:50px; text-align:center;'></td>
             </tr>`;
                                 tableBody.append(row);
                             });
