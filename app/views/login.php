@@ -134,19 +134,6 @@
             </div>
          </div>
       </div>
-<<<<<<< HEAD
-      
-   
-
-
-
-
-
-
-
-      <script src="assets/js/toa.js"></script>
-=======
       <script src="assets/js/main.js"></script>
->>>>>>> bf574e9bc1d30aab471a50a5f1f0eb6d0b04e09b
    </body>
 </html>
