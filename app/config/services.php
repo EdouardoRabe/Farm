@@ -3,6 +3,7 @@
 use app\models\AlimentationModel;
 use app\models\GeneraliserModel;
 use app\models\GestionModel;
+use app\models\ReinitialisationModel;
 use app\models\UploadModel;
 use flight\Engine;
 use flight\database\PdoWrapper;
@@ -49,5 +50,11 @@ Flight::map('alimentationModel', function () {
 Flight::map('gestionModel', function () {
     return new GestionModel(Flight::bdd());
 });
+
+
+Flight::map('resetModel', function () {
+    return new ReinitialisationModel(Flight::bdd());
+});
+
 
 
