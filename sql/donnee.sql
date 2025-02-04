@@ -68,6 +68,7 @@ VALUES
 
 
 
+
 INSERT INTO ferme_animal (id_typeAnimal, poids_initial) 
 VALUES 
 (1, 180.00),  -- Zébu

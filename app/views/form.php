@@ -1,3 +1,9 @@
+<?php
+if (isset($_GET['error'])) {
+    echo "<div class='error'>Une erreur s'est produite lors de l'ajout de l'achat.</div>";
+}
+?>
+
 <div class="login container grid" id="loginAccessRegister">
          <!--===== LOGIN ACCESS =====-->
 
