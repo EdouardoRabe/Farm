@@ -30,9 +30,8 @@ CREATE TABLE ferme_type_animal (
     image VARCHAR(100) NOT NULL,
     poids_minimal_vente DECIMAL(10, 2) NOT NULL,
     poids_maximal DECIMAL(10, 2) NOT NULL,
-    prix_achat DECIMAL(10,2) NOT NULL,
+    prix_achat_kg DECIMAL(10,2) NOT NULL,
     prix_vente_kg DECIMAL(10, 2) NOT NULL,
-    poids_initial DECIMAL(10,2) NOT NULL,
     jours_sans_manger INT NOT NULL,
     perte_poids_jour DECIMAL(5, 2) NOT NULL,
     consommation_jour DECIMAL(5, 2) NOT NULL
@@ -41,6 +40,7 @@ CREATE TABLE ferme_type_animal (
 CREATE TABLE ferme_animal (
     id_animal INT PRIMARY KEY AUTO_INCREMENT,
     id_typeAnimal INT NOT NULL,
+    poids_initial DECIMAL(10,2) NOT NULL,
     FOREIGN KEY (id_typeAnimal) REFERENCES ferme_type_animal (id_typeAnimal)
 );
 
@@ -48,11 +48,9 @@ CREATE TABLE ferme_alimentation (
     id_alimentation INT PRIMARY KEY AUTO_INCREMENT,
     image VARCHAR(100) NOT NULL,
     id_typeAnimal INT NOT NULL,
-    prix_achat DECIMAL(10,2) NOT NULL,
+    prix_achat_kg DECIMAL(10,2) NOT NULL,
     nom VARCHAR(100) NOT NULL,
     pourcentage_gain DECIMAL(5, 2) NOT NULL,
-    poids DECIMAL(10, 2) NOT NULL,
-    quantiteKg DECIMAL(5, 2) NOT NULL,
     FOREIGN KEY (id_typeAnimal) REFERENCES ferme_type_animal (id_typeAnimal)
 );
 
@@ -60,8 +58,10 @@ CREATE TABLE ferme_achat_alimentation (
     id_achatAlimentation INT PRIMARY KEY AUTO_INCREMENT,
     id_alimentation INT NOT NULL,
     quantiteKg DECIMAL(5, 2) NOT NULL,
+    date_achat DATE NOT NULL,
     id_user INT,
     date_achat Date,
+    montant DECIMAL(10,2) NOT NULL,
     FOREIGN KEY (id_user) REFERENCES ferme_user (id_user),
     FOREIGN KEY (id_alimentation) REFERENCES ferme_alimentation (id_alimentation)
 );
@@ -72,6 +72,7 @@ CREATE TABLE ferme_achat_animal (
     id_animal INT NOT NULL,
     date_achat DATE NOT NULL,
     id_user INT,
+    montant DECIMAL(10,2) NOT NULL,
     FOREIGN KEY (id_user) REFERENCES ferme_user (id_user),
     FOREIGN KEY (id_animal) REFERENCES ferme_animal (id_animal)
 );
@@ -86,5 +87,11 @@ CREATE TABLE ferme_vente_animal (
     FOREIGN KEY (id_user) REFERENCES ferme_user (id_user),
     FOREIGN KEY (id_animal) REFERENCES ferme_animal (id_animal)
 );
+
+
+
+
+
+
 
 

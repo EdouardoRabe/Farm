@@ -76,7 +76,7 @@ class AnimalController {
 
         $omitColumns = ['id_typeAnimal'];  
     
-        Flight::render('table', [
+        Flight::render('template_liste', [
             'data' => $data,
             'columnTypes' => $columnTypes,
             'omitColumns' => $omitColumns,

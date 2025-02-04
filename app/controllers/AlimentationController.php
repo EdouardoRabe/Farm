@@ -73,7 +73,10 @@ class AlimentationController
 
         $omitColumns = ['id_alimentation'];
 
-        Flight::render('table', [
+
+        $omitColumns = ['id_alimentation'];  
+    
+        Flight::render('template_liste', [
             'data' => $data,
             'columnTypes' => $columnTypes,
             'omitColumns' => $omitColumns,

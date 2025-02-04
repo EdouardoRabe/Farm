@@ -2,6 +2,7 @@
 
 use app\models\AlimentationModel;
 use app\models\GeneraliserModel;
+use app\models\GestionModel;
 use app\models\UploadModel;
 use flight\Engine;
 use flight\database\PdoWrapper;
@@ -42,6 +43,8 @@ Flight::map('uploadModel', function () {
 
 Flight::map('alimentationModel', function () {
     return new AlimentationModel(Flight::bdd());
+Flight::map('gestionModel', function () {
+    return new GestionModel(Flight::bdd());
 });
 
 
