@@ -30,44 +30,11 @@
 </head>
 
 <body>
-    <!-- Topbar Start -->
-    <div class="container-fluid border-bottom d-none d-lg-block">
-        <div class="row gx-0">
-            <div class="col-lg-4 text-center py-2">
-                <div class="d-inline-flex align-items-center">
-                    <i class="bi bi-person-circle fs-1 text-primary me-3"></i>
-                    <div class="text-start">
-                        <h6 class="text-uppercase mb-1">Bienvenu User Nom</h6>
-                        <!-- <span>User nom</span> -->
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-4 text-center border-start border-end py-2">
-                <div class="d-inline-flex align-items-center">
-                    <i class="bi bi-cash fs-1 text-primary me-3"></i>
-                    <div class="text-start">
-                        <h6 class="text-uppercase mb-1"> 1000$</h6>
-                        <!-- <span>info@example.com</span> -->
-                    </div>
-                </div>
-            </div>
-            <!-- <div class="col-lg-4 text-center py-2">
-                <div class="d-inline-flex align-items-center">
-                    <i class="bi bi-phone-vibrate fs-1 text-primary me-3"></i>
-                    <div class="text-start">
-                        <h6 class="text-uppercase mb-1">Call Us</h6>
-                        <span>+012 345 6789</span>
-                    </div>
-                </div>
-            </div> -->
-        </div>
-    </div>
-    <!-- Topbar End -->
-
+    
 
     <!-- Navbar Start -->
     <nav class="navbar navbar-expand-lg bg-white navbar-light shadow-sm py-3 py-lg-0 px-3 px-lg-0">
-        <a href="index.html" class="navbar-brand ms-lg-5">
+        <a href="#" class="navbar-brand ms-lg-5">
             <h1 class="m-0 text-uppercase text-dark"><i class="bi bi-shop fs-1 text-primary me-3"></i>Farm Shop</h1>
         </a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
@@ -75,7 +42,7 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarCollapse">
             <div class="navbar-nav ms-auto py-0">
-                <a href="index.html" class="nav-item nav-link active">Home</a>
+                <a href="#" class="nav-item nav-link active">Home</a>
                 <a href="about.html" class="nav-item nav-link">Achat</a>
                 <a href="service.html" class="nav-item nav-link">Vente</a>
                 <a href="product.html" class="nav-item nav-link">Alimentation</a>
@@ -85,6 +52,46 @@
         </div>
     </nav>
     <!-- Navbar End -->
+
+    <!-- Topbar Start -->
+    <div class="container-fluid border-bottom d-none d-lg-block">
+        <div class="row gx-0">
+            <div class="col-lg-4 text-center py-2">
+                <div class="d-inline-flex align-items-center">
+                    <i class="bi bi-person-circle fs-1 text-primary me-3"></i>
+                    <div class="text-start">
+                        <h6 class="text-uppercase mb-1"><strong>Bienvenu <?= $_SESSION['user'][0]['name']?></strong></h6>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 text-center border-start border-end py-2">
+                <div class="d-inline-flex align-items-center">
+                    <i class="bi bi-cash fs-1 text-primary me-3"></i>
+                    <div class="text-start">
+                        <h6 class="text-uppercase mb-1"> <strong><?= $_SESSION['result']?> Ar</strong></h6>
+                        <!-- <span>info@example.com</span> -->
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 text-center py-2">
+            <div class="d-inline-flex align-items-center">
+                    <a href="reinitialisation" class="text-danger fw-bold" onclick="return confirmReset();"><i class="bi bi-arrow-clockwise fs-1 text-primary me-3"></i></a>
+                    <div class="text-start">
+                        <h6 class="text-uppercase mb-1"><strong>REINITIALISER</strong></h6>
+                    </div>
+                </div>
+            </div>
+
+    <script>
+        function confirmReset() {
+            return confirm("Êtes-vous sûr de vouloir réinitialiser ?");
+        }
+    </script>
+
+        </div>
+    </div>
+    <!-- Topbar End -->
+
 
 
     <!-- Hero Start -->
