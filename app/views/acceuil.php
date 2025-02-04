@@ -306,6 +306,18 @@
     <!-- Footer End -->
 
 
+    <footer>
+    <div class="footer-content">
+      <p>&copy; 2025 MonSiteWeb. Tous droits réservés.</p>
+      <ul class="social-links">
+        <li><a href="#" class="social-link">ETU003169</a></li>
+        <li><a href="#" class="social-link">ETU003285</a></li>
+        <li><a href="#" class="social-link">ETU003263</a></li>
+      </ul>
+    </div>
+  </footer>
+
+
 
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>

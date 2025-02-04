@@ -44,7 +44,15 @@ class UtilisateurController {
         $reponse['capitaux_date'] = date("Y-m-d H:i:s");
         $reponse['id_user'] = $_SESSION['id_user'];
         $insertion = $generelaiserModel->insererDonnee('ferme_gestion_capitaux',$reponse);
-        Flight:: redirect('formCapitaux?success');
+        // Flight:: redirect('formCapitaux?success');
+        if($insertion)
+        {
+            Flight:: redirect('formCapitaux?success');
+        }
+        else
+        {
+            Flight:: redirect('formCapitaux?error=1');
+        }
     }
 
 

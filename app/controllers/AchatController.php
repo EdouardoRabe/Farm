@@ -40,8 +40,16 @@ class AchatController {
             'montant'=>$_POST['prix_achat_kg']*$_POST['poids_initial'],
         ];
        
-        $insertAchat=$generelaiserModel-> insererDonnee('ferme_achat_animal',$donnee,'POST');
-        Flight::redirect('tableAchat?success');
+         $insertAchat=$generelaiserModel-> insererDonnee('ferme_achat_animal',$donnee,'POST');
+        // Flight::redirect('tableAchat?success');
+
+        if ($insertAchat) {
+            // Si l'insertion est réussie, rediriger vers la page avec un message de succès
+            Flight::redirect('tableAchat?success');
+        } else {
+            // Si l'insertion échoue, afficher un message d'erreur
+            Flight::redirect('tableAchat?error=1');
+        }
     }
 
     
