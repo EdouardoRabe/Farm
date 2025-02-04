@@ -37,6 +37,8 @@ class AchatAlimentationController {
                 'id_user'=>$_SESSION['id_user']
             ];
             $insertAnimal=$generelaiserModel-> insererDonnee('ferme_achat_alimentation',$reponse,'POST');
+            $result = $gestionModel->calculerCapital(date("Y-m-d H:i:s"),$_SESSION['id_user']);
+            $_SESSION['result']=$result;
             Flight::redirect('tableAchatAlimentation?success');
         }
     }
