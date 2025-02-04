@@ -1,11 +1,4 @@
-<!DOCTYPE html>
-<html lang="fr">
-<head>
-    <meta charset="UTF-8">
-    <title><?= $title ?></title>
-    <link href="assets/css/bootstrap.min.css" rel="stylesheet">
-</head>
-<body>
+
 
 <?php if (!empty($data)) { ?>
     <form method="post" action="<?= $redirectForm ?>" enctype="multipart/form-data">
@@ -81,5 +74,4 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 </script>
 
-</body>
-</html>
+
