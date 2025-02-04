@@ -1,6 +1,6 @@
 /********** Template CSS **********/
 :root {
-    --primary: #7AB730;
+    --primary: hsl(208, 92%, 54%);
     --secondary: #FFD33C;
     --light: #F3F3F3;
     --dark: #212121;
@@ -113,7 +113,7 @@
 }
 
 .hero-header {
-    background: url(../img/hero.jpg) top right no-repeat;
+    background: url(../img/mouton.jpeg) top right no-repeat;
     background-size: cover;
 }
 
