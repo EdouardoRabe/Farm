@@ -20,7 +20,7 @@
     --clr-link: #2962ff;
     --radius: 0.2rem;
   }
-  
+/*   
   *,
   *::before,
   *::after {
@@ -38,7 +38,7 @@
     color: var(--clr-gray500);
     font-size: 0.9rem;
     background-color: var(--clr-gray100);
-  }
+  } */
   
   table {
     border-collapse: collapse;
@@ -46,6 +46,7 @@
     background-color: white;
     text-align: left;
     overflow: hidden;
+    width: 10px;
   }
   
   thead {
@@ -53,7 +54,8 @@
   }
   
   th {
-    padding: 1rem 2rem;
+    /* padding: 1rem 2rem; */
+    padding: 1.5rem 0.8rem;
     text-transform: uppercase;
     letter-spacing: 0.1rem;
     font-size: 0.7rem;
@@ -61,7 +63,7 @@
   }
   
   td {
-    padding: 1rem 2rem;
+    padding: 1.5rem 0.8rem;
   }
   
   a {

@@ -2,16 +2,18 @@
 
 namespace app\controllers;
 
+use Exception;
 use Flight;
 use flight\debug\tracy\FlightPanelExtension;
 
-class AlimentationController {
+class AlimentationController
+{
 
-    public function __construct() {
-    }
+    public function __construct() {}
 
-    public function showForm() {
-        $generelaiserModel=Flight:: generaliserModel();
+    public function showForm()
+    {
+        $generelaiserModel = Flight::generaliserModel();
         $columns = $generelaiserModel->getTableHeaders("ferme_alimentation");
         $columnTypes = [
             'int' => 'number',
@@ -32,28 +34,29 @@ class AlimentationController {
             'hidden' => [],
             'canNull' => false,
             'numericDouble' => [],
-            'title'=> 'Creation de type d\'alimentation',
-            'redirect'=> 'createAlimentation'
+            'title' => 'Creation de type d\'alimentation',
+            'redirect' => 'createAlimentation'
         ]);
     }
 
-    function createAlimentation(){
-        $generelaiserModel= Flight:: generaliserModel();
+    function createAlimentation()
+    {
+        $generelaiserModel = Flight::generaliserModel();
         $uploadModel = Flight::uploadModel();
-        $reponse= $generelaiserModel-> getFormData('ferme_alimentation',['id_alimentation'],'POST');
-        $file=$_FILES['image'];
-        if($uploadModel-> checkError($file)){
-            Flight:: redirect('formAlimentation?error');
-        }
-        else{
+        $reponse = $generelaiserModel->getFormData('ferme_alimentation', ['id_alimentation'], 'POST');
+        $file = $_FILES['image'];
+        if ($uploadModel->checkError($file)) {
+            Flight::redirect('formAlimentation?error');
+        } else {
             $upload_image = $uploadModel->uploadImg($file);
-            $reponse['image']=$upload_image;
-            $insert=$generelaiserModel->  insererDonnee('ferme_alimentation',$reponse);
-            Flight:: redirect('tableAlimentation');
+            $reponse['image'] = $upload_image;
+            $insert = $generelaiserModel->insererDonnee('ferme_alimentation', $reponse);
+            Flight::redirect('tableAlimentation');
         }
     }
 
-    public function showEditableList() {
+    public function showEditableList()
+    {
         $columnTypes = [
             'int' => 'number',
             'float' => 'number',
@@ -65,8 +68,11 @@ class AlimentationController {
             'datetime' => 'datetime-local',
             'text' => 'textarea'
         ];
-        $generelaiserModel= Flight:: generaliserModel();
-        $data=$generelaiserModel-> getTableData('ferme_alimentation',[],[]);
+        $generelaiserModel = Flight::generaliserModel();
+        $data = $generelaiserModel->getTableData('ferme_alimentation', [], []);
+
+        $omitColumns = ['id_alimentation'];
+
 
         $omitColumns = ['id_alimentation'];  
     
@@ -75,16 +81,17 @@ class AlimentationController {
             'columnTypes' => $columnTypes,
             'omitColumns' => $omitColumns,
             'redirectForm' => 'updateAlimentation',
-            'column'=>'id_alimentation',
+            'column' => 'id_alimentation',
             'title' => 'Liste modifiable'
         ]);
     }
 
-    function updateAlimentation() {
+    function updateAlimentation()
+    {
         $generelaiserModel = Flight::generaliserModel();
         $uploadModel = Flight::uploadModel();
-    
-        $id_alimentations = $_POST['id_alimentation']; 
+
+        $id_alimentations = $_POST['id_alimentation'];
         $images = $_FILES['image'];
         foreach ($id_alimentations as $index => $id_alimentation) {
             $data = [];
@@ -103,17 +110,53 @@ class AlimentationController {
                     $data['image'] = $upload_image;
                 }
             } else {
-                $data['image'] = $_POST['old_image'][$index]; 
+                $data['image'] = $_POST['old_image'][$index];
             }
             unset($data['old_image']);
             $update = $generelaiserModel->updateTableData('ferme_alimentation', $data, ['id_alimentation' => $id_alimentation]);
         }
         Flight::redirect('tableAlimentation?success');
     }
+
+
+
+    function getGlobalResult()
+    {
+        try {
+            $dateFin = Flight::request()->data->dateFin;
+            $dateDebut = "2025-02-03"; 
     
+            if (!$dateFin) {
+                Flight::json(['error' => 'Date requise'], 400);
+                return;
+            }
+            $alimentModel = Flight::alimentationModel();
+            if (!$alimentModel) {
+                throw new Exception("Le modèle d'alimentation est introuvable.");
+            }
+            $result = $alimentModel->calculerStockFerme($dateDebut, $dateFin,1);
+            if (!$result) {
+                throw new Exception("Les résultats du calcul sont vides.");
+            }
+            $response = [
+                'listanimaux' => $result['listanimaux'],
+                'animaux' => $result['stock_animaux'] ?? 0,
+                'nourriture' => $result['stock_nourriture'] ?? 0,
+                'capitaux' => $result['capitaux'] ?? 0
+            ];
+    
+            Flight::json($result);
+        } catch (Exception $e) {
+            // Log l'erreur pour mieux comprendre le problème
+            error_log($e->getMessage());
+            Flight::json(['error' => 'Erreur de calcul: ' . $e->getMessage()], 500);
+        }
+    }
     
 
-    
-  
-   
+
+    function redirectTableBord()
+    {
+        Flight::render('tableBord');
+    }
 }

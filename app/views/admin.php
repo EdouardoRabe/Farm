@@ -41,12 +41,12 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarCollapse">
             <div class="navbar-nav ms-auto py-0">
-                <a href="index.html" class="nav-item nav-link active">Home</a>
+                <a href="admin" class="nav-item nav-link active">Home</a>
                 <a href="formAnimal" class="nav-item nav-link">Create Animal</a>
                 <a href="tableAnimal" class="nav-item nav-link">Animal Update</a>
                 <a href="formAlimentation" class="nav-item nav-link">Create Alimentation</a>
                 <a href="tableAlimentation" class="nav-item nav-link">Alimentation Update</a>
-                <a href="#" class="nav-item nav-link nav-contact bg-primary text-white px-5 ms-lg-5">Log out <i class="bi bi-arrow-right"></i></a>
+                <a href="/ETU003285/Farm/" class="nav-item nav-link nav-contact bg-primary text-white px-5 ms-lg-5">Log out <i class="bi bi-arrow-right"></i></a>
             </div>
         </div>
     </nav>

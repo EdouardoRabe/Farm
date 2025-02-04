@@ -1,5 +1,6 @@
 <?php
 
+use app\models\AlimentationModel;
 use app\models\GeneraliserModel;
 use app\models\GestionModel;
 use app\models\ReinitialisationModel;
@@ -41,6 +42,11 @@ Flight::map('uploadModel', function () {
     return new UploadModel(Flight::bdd());
 });
 
+Flight::map('alimentationModel', function () {
+    return new AlimentationModel(Flight::bdd());
+});
+
+
 Flight::map('gestionModel', function () {
     return new GestionModel(Flight::bdd());
 });
@@ -49,5 +55,6 @@ Flight::map('gestionModel', function () {
 Flight::map('resetModel', function () {
     return new ReinitialisationModel(Flight::bdd());
 });
+
 
 
